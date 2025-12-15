@@ -30,6 +30,9 @@ with st.form(key="my-form"):
             print(f"form_data_dict: {form_data_dict}")
 
             res = requests.post(url="python-valami-zc8q.vercel.app", data=form_data_dict)
+            print(f"res.ok: {res.ok}")
+            print(f"res.status_code: {res.status_code}")
+            print(f"res.text: {res.text}")
 
             st.success("OK")
         else:
