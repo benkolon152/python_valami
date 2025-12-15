@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 st.set_page_config(page_title="Lies page", layout="wide")
 st.title("Lies Form")
@@ -27,6 +28,9 @@ with st.form(key="my-form"):
         if details and len(politician_name) >=1:
             form_data_dict = {"politician_name": politician_name, "age": age, "party_name": party_name, "color": color, "lie_date": lie_date, "lie_title": lie_title}
             print(f"form_data_dict: {form_data_dict}")
+
+            res = requests.post(url="python-valami-zc8q.vercel.app", data=form_data_dict)
+
             st.success("OK")
         else:
             st.error("Please fill out the form fields.")
